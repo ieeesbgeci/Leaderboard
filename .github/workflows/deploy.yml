@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 18.13.0
       - name: Set up environment variables
-        run: echo "VITE_API_URL=$API_URL" > .env  && cat .env
+        run: echo "VITE_API_URL=$API_URL" > .env
         env:
           API_URL: ${{ secrets.VITE_API_URL }}
       - name: Install dependencies and build
