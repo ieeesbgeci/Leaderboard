@@ -19,7 +19,8 @@ jobs:
         with:
           node-version: 18.13.0
       - name: Set up environment variables
-        run: echo "$API_URL" > .env
+        run: echo "$API_URL" > .env 
+        run: cat .env 
         env:
           API_URL: ${{ secrets.API_URL }}
       - name: Install dependencies and build
