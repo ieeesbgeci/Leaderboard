@@ -13,10 +13,10 @@
 const VITE_API_URL=import.meta.env.VITE_API_URL;
 
 	onMount(async () => {
-		const eventResponse = await fetch($`http://{VITE_API_URL}/event/info`);
+		const eventResponse = await fetch(`http://${VITE_API_URL}/event/info`);
 		if (eventResponse.ok) {
 			eventInfo = await eventResponse.json();
-			socket = new WebSocket(`ws://{VITE_API_URL}/vaderboard`);
+			socket = new WebSocket(`ws://${VITE_API_URL}/vaderboard`);
 			socket.onmessage = (event) => {
 				leaderboardData = JSON.parse(event.data);
 			};
