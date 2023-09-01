@@ -9,12 +9,14 @@
 	import { onMount } from 'svelte';
 	import { type EventInfo, type PlayerInfo, VaderState } from '../types';
 	import PlayerBar from './PlayerBar.svelte';
+   
+const VITE_API_URL=import.meta.env.VITE_API_URL;
 
 	onMount(async () => {
-		const eventResponse = await fetch('http://localhost:8080/event/info');
+		const eventResponse = await fetch($`http://{VITE_API_URL}/event/info`);
 		if (eventResponse.ok) {
 			eventInfo = await eventResponse.json();
-			socket = new WebSocket('ws://localhost:8080/vaderboard');
+			socket = new WebSocket(`ws://{VITE_API_URL}/vaderboard`);
 			socket.onmessage = (event) => {
 				leaderboardData = JSON.parse(event.data);
 			};
