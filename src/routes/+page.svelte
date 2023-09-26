@@ -169,5 +169,9 @@ const VITE_API_URL=import.meta.env.VITE_API_URL;
 			margin-bottom: 0;
 			font-size: large;
 		}
+		.vboard-container{
+			display:flex;
+			justify-content:center;
+		}
 	</style>
 </body>
