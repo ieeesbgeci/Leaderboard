@@ -28,13 +28,13 @@ const VITE_API_URL=import.meta.env.VITE_API_URL;
 </script>
 
 <svelte:head>
-	<title>VaderBoard</title>
+	<title>IEEE LEADERBOARD</title>
 	<meta name="description" content="VaderBoard leaderboard page" />
 </svelte:head>
 
 <body>
 	<div class="nes-container is-dark is-centered">
-		<h1>VaderBoard</h1>
+		<h1>IEEE LEADERBOARD</h1>
 	</div>
 	<section class="nes-container is-dark info-container">
 		{#if eventInfo}
