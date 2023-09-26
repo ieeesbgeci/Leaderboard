@@ -38,6 +38,7 @@ const VITE_API_URL=import.meta.env.VITE_API_URL;
 	</div>
 	<section class="nes-container is-dark info-container">
 		{#if eventInfo}
+			<!--
 			<button class="nes-btn is-primary" on:click={() => (showEventInfo = !showEventInfo)}>
 				{#if showEventInfo}
 					Hide Event Info
@@ -45,6 +46,7 @@ const VITE_API_URL=import.meta.env.VITE_API_URL;
 					Show Event Info
 				{/if}
 			</button>
+			-->
 
 			{#if showEventInfo}
 				<div class="nes-container is-dark">
