@@ -5,7 +5,7 @@
 	let socket: WebSocket | null = null;
 	let leaderboardData: PlayerInfo[] = [];
 	let showEventInfo = false;
-	let eventEnd = false;
+	//let eventEnd = false;
 	import { onMount } from 'svelte';
 	import { type EventInfo, type PlayerInfo, VaderState } from '../types';
 	import PlayerBar from './PlayerBar.svelte';
@@ -17,11 +17,13 @@ const VITE_API_URL=import.meta.env.VITE_API_URL;
 		if (eventResponse.ok) {
 			eventInfo = await eventResponse.json();
 			socket = new WebSocket(`wss://${VITE_API_URL}/vaderboard`);
+			socket.onopen()=()=>{console.log("connected to leaderboard wss endpoint");}
 			socket.onmessage = (event) => {
 				leaderboardData = JSON.parse(event.data);
 			};
 			socket.onclose = () => {
-				eventEnd = true;
+				// eventEnd = true;
+				console.log("disconnected from leaderboard wss endpoint");
 			};
 		}
 	});
