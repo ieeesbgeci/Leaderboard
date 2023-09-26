@@ -106,6 +106,7 @@ const VITE_API_URL=import.meta.env.VITE_API_URL;
 					</tbody>
 				</table>
 			</div>
+			<!--
 			{#if eventInfo.event_type === 'UserEvent'}
 				<PlayerBar {leaderboardData} xLabel={'UserName ♔'} />
 			{:else}
@@ -127,6 +128,7 @@ const VITE_API_URL=import.meta.env.VITE_API_URL;
 					</div>
 				</div>
 			{/if}
+			-->
 		</section>
 	{/if}
 
