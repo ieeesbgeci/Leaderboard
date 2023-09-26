@@ -17,7 +17,7 @@ const VITE_API_URL=import.meta.env.VITE_API_URL;
 		if (eventResponse.ok) {
 			eventInfo = await eventResponse.json();
 			socket = new WebSocket(`wss://${VITE_API_URL}/vaderboard`);
-			socket.onopen()=()=>{console.log("connected to leaderboard wss endpoint");}
+			socket.onopen=()=>{console.log("connected to leaderboard wss endpoint");}
 			socket.onmessage = (event) => {
 				leaderboardData = JSON.parse(event.data);
 			};
